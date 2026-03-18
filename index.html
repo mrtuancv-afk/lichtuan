@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo Lịch công tác tuần</title>
+    <style>
+        :root {
+            --primary-red: #a01d1d;
+            --light-red: #fdeaea;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Times New Roman", Times, serif; /* Font chữ hành chính chuẩn */
+            background-color: #fff;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Trong_dong_Ngoc_Lu_1.jpg/800px-Trong_dong_Ngoc_Lu_1.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: 60%; /* Hiệu ứng trống đồng mờ ở giữa */
+            background-blend-mode: overlay;
+        }
+        .container {
+            width: 98%;
+            margin: 10px auto;
+            background-color: rgba(255, 255, 255, 0.9); /* Làm mờ nền để thấy trống đồng */
+            border: 2px solid var(--primary-red);
+            min-height: 95vh;
+        }
+        /* Header section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .flag { width: 80px; }
+        .banner {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 15px 50px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .banner h1 { margin: 0; font-size: 24px; text-transform: uppercase; }
+        .banner p { margin: 5px 0 0; font-style: italic; }
+        
+        .clock-section { text-align: right; color: var(--primary-red); font-weight: bold; }
+        #digital-clock { font-size: 28px; }
+
+        /* Table section */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th {
+            background-color: var(--primary-red);
+            color: white;
+            text-transform: uppercase;
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+        }
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            vertical-align: middle;
+            font-size: 15px;
+        }
+        .day-column { font-weight: bold; text-align: center; color: var(--primary-red); width: 80px; }
+        .session-column { text-align: center; color: var(--primary-red); font-weight: bold; width: 60px; }
+        .time-column { text-align: center; font-weight: bold; width: 70px; }
+        .content-column { text-align: left; line-height: 1.4; }
+        .highlight-red { color: var(--primary-red); font-weight: bold; }
+
+        /* Footer navigation */
+        .footer-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #555;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 5px 0;
+            font-size: 12px;
+        }
+        .footer-nav span { margin: 0 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="flag">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Flag_of_Vietnam.svg/125px-Flag_of_Vietnam.svg.png" width="60">
+        </div>
+        
+        <div class="banner">
+            <h1>Thông báo: Lịch công tác tuần</h1>
+            <p>Từ ngày 16/03/2026 đến ngày 22/03/2026</p>
+        </div>
+
+        <div class="clock-section">
+            <div>TỈNH ỦY SƠN LA</div>
+            <div style="font-size: 18px;">BAN TỔ CHỨC</div>
+            <div id="digital-clock">16:06:49</div>
+            <div id="current-date">Thứ Tư, 18/03/2026</div>
+        </div>
+    </header>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Thứ</th>
+                <th>Buổi</th>
+                <th>Thời gian</th>
+                <th>Nội dung công việc</th>
+                <th>Chủ trì</th>
+                <th>Thành phần</th>
+                <th>Địa điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="4" class="day-column">THỨ TƯ<br>18/03</td>
+                <td rowspan="3" class="session-column">Sáng</td>
+                <td class="time-column">07:30</td>
+                <td class="content-column">Đoàn kiểm tra, giám sát làm việc với Ban Thường vụ Tỉnh ủy Sơn La</td>
+                <td>Trưởng ban <span class="highlight-red">Nguyễn Đức Thành</span></td>
+                <td>-</td>
+                <td>PH số 2, TTHN tỉnh</td>
+            </tr>
+            <tr>
+                <td class="time-column">08:00</td>
+                <td class="content-column">Tập huấn diễn tập khu vực phòng thủ (dự kiến)</td>
+                <td>Phó trưởng ban <span class="highlight-red">Lê Minh Khôi</span></td>
+                <td>-</td>
+                <td>PH số 02, tầng 3, TTHN tỉnh</td>
+            </tr>
+            <tr>
+                <td class="time-column">11:30</td>
+                <td class="content-column">Dự cơm trưa tiếp Đoàn kiểm tra, giám sát của Bộ Chính trị, Ban Bí thư</td>
+                <td>Trưởng ban <span class="highlight-red">Nguyễn Đức Thành</span></td>
+                <td>-</td>
+                <td>Nhà hàng Suối hẹn</td>
+            </tr>
+            <tr>
+                <td class="session-column">Chiều</td>
+                <td class="time-column">15:00</td>
+                <td class="content-column">Hội nghị về công tác cán bộ</td>
+                <td>Phó trưởng ban <span class="highlight-red">Nguyễn Xuân Lâm</span></td>
+                <td>Lãnh đạo Phòng</td>
+                <td>HT tầng 3, sở VHTT&DL</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="day-column">THỨ NĂM<br>19/03</td>
+                <td class="session-column">Sáng</td>
+                <td class="time-column">08:00</td>
+                <td class="content-column">Hội thảo khoa học "Đổi mới hoạt động của ban thường vụ các tỉnh ủy..."</td>
+                <td>Phó trưởng ban <span class="highlight-red">Lê Minh Khôi</span></td>
+                <td>-</td>
+                <td>Hội trường BTC TW</td>
+            </tr>
+            <tr>
+                <td class="session-column">Chiều</td>
+                <td class="time-column">14:00</td>
+                <td class="content-column">Hội nghị Ban Thường vụ Tỉnh ủy</td>
+                <td>Trưởng ban <span class="highlight-red">Nguyễn Đức Thành</span></td>
+                <td>-</td>
+                <td>PH Ban chấp hành</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="footer-nav">
+    <span>+ / - : Tuần trước / sau</span>
+    <span>1 / 1 : Chuyển trang</span>
+    <span>OK / ENTER: Về hôm nay</span>
+</div>
+
+<script>
+    // Hàm cập nhật đồng hồ nhảy giây
+    function updateClock() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+</body>
+</html>
